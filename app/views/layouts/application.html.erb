@@ -9,6 +9,20 @@
   </head>
 
   <body>
+
+ <%= alert %>
+      <%=  notice %>
+      <% if logged? %>
+    
+      Bienvenido <%= current_user.email %>
+      <%= link_to "salir", session_path(current_user), method: :delete %>
+      <% else %>
+      el usuario no ingresado
+      <% end %>
+
     <%= yield %>
   </body>
+
+ 
+
 </html>
